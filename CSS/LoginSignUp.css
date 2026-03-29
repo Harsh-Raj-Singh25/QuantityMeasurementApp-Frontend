@@ -1,0 +1,62 @@
+body {
+  font-family: Arial;
+  background: #888;
+}
+
+.container {
+  display: flex;
+  width: 700px;
+  margin: 100px auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  background: #f0f0f0;
+  display: flex;
+  margin: 5px;
+  justify-content: left;
+  size-adjust: 5px;
+  align-items: center;
+}
+
+.right {
+  flex: 1;
+  padding: 20px; 
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tabs span {
+  cursor: pointer;
+}
+
+.tabs .active {
+  font-weight: bold;
+  border-bottom: 2px solid red;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: brown;
+  color: white;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
