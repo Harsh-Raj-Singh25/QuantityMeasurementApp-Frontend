@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Auth Page</title>
-  <link rel="stylesheet" href="C:\Users\HP5CD\Desktop\QuantityMeasurementApp-frontend\CSS\LoginSignUp.css">
+  <meta charset="UTF-8">
+  <title>Auth Page - Quantity Measurement</title>
+  <link rel="stylesheet" href="./CSS/LoginSignUp.css">
 </head>
-
 <body>
-
 <div class="container">
-
-  <!-- Left Section -->
   <div class="left">
     <h2>Quantity Measurement App</h2>
-    <img src="C:\Users\HP5CD\Desktop\QuantityMeasurementApp-frontend\triple-beam-balance.png" alt="owner" width="150" height="100">
+    <img src="C:\Users\HP5CD\Desktop\QuantityMeasurementApp-frontend\Assets\triple-beam-balance.png" alt="logo" width="150" height="100">
   </div>
 
-  <!-- Right Section -->
   <div class="right">
-
-    <!-- Tabs -->
     <div class="tabs">
       <span id="loginTab" class="active">LOGIN</span>
       <span id="signupTab">SIGNUP</span>
     </div>
 
-    <!-- Login Form -->
     <form id="loginForm">
       <input type="email" id="loginEmail" placeholder="Email" required>
       <input type="password" id="loginPassword" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
 
-    <!-- Signup Form -->
     <form id="signupForm" class="hidden">
       <input type="text" id="name" placeholder="Full Name" required>
       <input type="email" id="email" placeholder="Email" required>
@@ -39,10 +31,9 @@
       <input type="text" id="mobile" placeholder="Mobile Number" required>
       <button type="submit">Signup</button>
     </form>
-
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="./Js/auth.js"></script>
 </body>
 </html>

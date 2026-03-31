@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard - Quantity Measurement</title>
+        <link rel="stylesheet" href="./CSS/DashBoard.css">
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to Quantity Measurement</h1>
+            <button id="logoutBtn" style="background: white; color: #4a6cf7; margin-top: 10px;">Logout</button>
+        </header>
+    <main>
+        <section class="types">
+            <h3>Choose Type</h3>
+            <div class="type-container">
+                <div class="card active" data-type="LENGTH">Length</div>
+                <div class="card" data-type="WEIGHT">Weight</div>
+                <div class="card" data-type="TEMPERATURE">Temperature</div>
+                <div class="card" data-type="VOLUME">Volume</div>
+            </div>
+        </section>
+
+        <section class="actions">
+            <h3>Choose Action</h3>
+            <div class="action-container">
+                <button class="action-btn active" data-action="COMPARE">Comparison</button>
+                <button class="action-btn" data-action="CONVERT">Conversion</button>
+                <button class="action-btn" data-action="ADD">Arithmetic</button>
+            </div>
+        </section>
+        <section class="inputs">
+            <div class="input-box">
+                <input type="number" id="val1" placeholder="Value 1">
+                <select id="unit1">
+                    </select>
+            </div>
+
+            <div class="input-box">
+                <input type="number" id="val2" placeholder="Value 2">
+                <select id="unit2">
+                    </select>
+            </div>
+        </section>
+        <section style="display: flex; justify-content: center; margin: 20px;">
+            <button id="calculateBtn" style="padding: 12px 30px; background: #4a6cf7; color: white; font-size: 16px; border-radius: 8px; border: none; cursor: pointer;">
+                Calculate Result
+            </button>
+        </section>
+        
+        <section class="result">
+             <h2 id="resultDisplay">Result: --</h2>
+        </section>
+<!-- 
+        <section class="inputs">
+            <div class="input-box">
+                <input type="number" id="val1" placeholder="Value 1">
+                <select id="unit1">
+                    <option value="KILOMETER">Kilometer</option>
+                    <option value="METER">Meter</option>
+                    <option value="FEET">Feet</option>
+                    <option value="INCHES">Inches</option>
+                    <option value="CENTIMETER">Centimeter</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <input type="number" id="val2" placeholder="Value 2">
+                <select id="unit2">
+                    <option value="METER">Meter</option>
+                    <option value="KILOMETER">Kilometer</option>
+                    <option value="FEET">Feet</option>
+                    <option value="INCHES">Inches</option>
+                    <option value="CENTIMETER">Centimeter</option>
+                </select>
+            </div>
+        </section>
+        
+        <section class="result">
+             <h2 id="resultDisplay">Result: --</h2>
+        </section> -->
+
+    </main>   
+    <script src="./Js/dashboard.js"></script>
+    </body>
+</html>

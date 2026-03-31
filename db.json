@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "Harsh Raj Singh",
+      "email": "harshrajsingh252@gmail.com",
+      "password": "Harsh@21",
+      "mobile": "9931865971",
+      "id": "N8nMmBgTuIQ"
+    },
+    {
+      "name": "Nammu",
+      "email": "nam3@g.com",
+      "password": "nam1",
+      "mobile": "8956328956",
+      "id": "YbZ0udsPC-E"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
