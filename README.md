@@ -20,6 +20,25 @@ It is designed to interface securely with the Spring Boot backend using Google O
 * **Styling:** CSS3 & HTML5
 * **State & Networking:** RxJS, Angular `HttpClient`
 
+## 🏗️ System Architecture & Traffic Flow
+
+The system utilizes Spring Cloud Gateway to intelligently route traffic. All services register with the Eureka Server for dynamic service discovery.
+
+```text
+[ Angular 17 UI ] (Port 4200)
+       │
+       ▼  HTTP Requests
+[ API Gateway ] (Port 8080) ──► (Validates JWT / CORS)
+       │
+       ├─► /api/v1/quantities/** ──► [ Measurement Service ] (Port 8081) 
+       │                                  └──► (Stateless Math Logic)
+       │
+       └─► /api/users/** ──────────► [ User Service ] (Port 8082)
+                                          ├──► (OAuth2 / JWT Auth)
+                                          └──► [ H2 Database ] (History & Profiles)
+
+* All backend services ping [ Eureka Server ] (Port 8761) for Service Discovery.
+
 ## 📂 Architecture Overview
 
 ```text
