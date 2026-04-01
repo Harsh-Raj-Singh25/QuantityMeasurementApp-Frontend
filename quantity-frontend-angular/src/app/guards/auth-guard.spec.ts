@@ -1,17 +1,19 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
+import { inject } from '@angular/core';
+import { AuthService } from '../services/auth';
 
-import { authGuard } from './auth-guard';
+export const authGuard: CanActivateFn = (route, state) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
 
-describe('authGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) =>
-    TestBed.runInInjectionContext(() => authGuard(...guardParameters));
+  // Check if they have a token OR if they clicked "Continue as Guest"
+  const isGuest = localStorage.getItem('guest_mode') === 'true';
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-  });
-
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
-  });
-});
+  if (authService.isLoggedIn() || isGuest) {
+    return true; // Let them in!
+  }
+  
+  // Otherwise, kick them back to login
+  router.navigate(['/login']);
+  return false;
+};

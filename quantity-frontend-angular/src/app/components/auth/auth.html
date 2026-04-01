@@ -1,6 +1,59 @@
-<div style="text-align: center; margin-top: 100px; font-family: Arial;">
-  <h2>Welcome to Quantity Measurement (Enterprise)</h2>
-  <button (click)="login()" style="padding: 10px 20px; background: #4285F4; color: white; border: none; cursor: pointer; font-size: 16px; border-radius: 5px;">
-    Login with Google
-  </button>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+  <div class="header-text">
+    <h1>{{ isLogin ? 'Welcome Back' : 'Create Account' }}</h1>
+    <p>{{ isLogin ? 'Login to continue your measurements' : 'Join our enterprise measurement system' }}</p>
+  </div>
+  
+  <div class="header-image">
+    <img src="/triple-beam-balance.png" alt="App Logo" class="corner-logo">
+  </div>
+</div>
+
+    <form (ngSubmit)="handleAuth()" class="auth-form">
+      <div class="input-group" *ngIf="!isLogin">
+        <label>Full Name</label>
+        <input type="text" [(ngModel)]="authData.name" name="name" placeholder="Harsh Kumar" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" [(ngModel)]="authData.email" name="email" placeholder="name@company.com" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="authData.password" name="password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        {{ isLogin ? 'Login' : 'Sign Up' }}
+      </button>
+    </form>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <button type="button" (click)="loginWithGoogle()" class="btn-google">
+      <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" alt="Google" width="20">
+        Continue with Google
+    </button>
+
+    <div class="auth-footer">
+      <p>
+        {{ isLogin ? "Don't have an account?" : "Already have an account?" }}
+        <span (click)="toggleMode()">{{ isLogin ? 'Create one' : 'Login here' }}</span>
+      </p>
+    </div>
+    
+    <div class="guest-divider"></div>
+    
+    <div class="guest-access">
+      <button type="button" (click)="continueAsGuest()" class="btn-guest">
+        Skip login and continue as Guest &rarr;
+      </button>
+    </div>
+  </div> 
 </div>

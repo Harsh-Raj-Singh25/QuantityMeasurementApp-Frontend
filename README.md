@@ -1,4 +1,4 @@
-# Quantity Measurement App - Enterprise Frontend (Angular)
+# Quantity Measurement App - Frontend (Angular)
 
 This branch contains **Version 2.0** of the Quantity Measurement Frontend, completely refactored into a modern, enterprise-grade Single Page Application (SPA) using **Angular 17**. 
 

@@ -1,0 +1,160 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* --- New Side-by-Side Header Layout --- */
+.auth-header {
+  display: flex;
+  justify-content: space-between; /* Pushes text left, image right */
+  align-items: center;            /* Vertically centers both */
+  margin-bottom: 30px;
+  gap: 15px;                      /* Adds breathing room between text and image */
+}
+
+.header-text {
+  text-align: left; /* Forces text to align left instead of center */
+  flex: 1;          /* Lets the text take up the remaining space */
+}
+
+.header-text h1 {
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+  font-size: 28px;
+}
+
+.header-text p {
+  color: #64748b;
+  margin: 0;
+  font-size: 14px;
+}
+
+.header-image {
+  flex-shrink: 0; /* Prevents the image space from being squished */
+}
+
+.corner-logo {
+  width: 100px; /* Adjust this number to make your image larger or smaller */
+  height: auto;
+  border-radius: 8px; /* Optional: gives the image slightly rounded corners */
+  object-fit: contain;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover { background: #3a56d4; }
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 1px; background: #eee;
+}
+
+.divider span {
+  background: white;
+  padding: 0 10px;
+  position: relative;
+  color: #999;
+  font-size: 12px;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-footer span {
+  color: #4a6cf7;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* **`src/app/components/auth/auth.css`** */
+/* Add these styles to make it look clean:
+```css */
+.guest-divider {
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}
+
+.guest-access {
+  text-align: center;
+}
+
+.btn-guest {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-guest:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
