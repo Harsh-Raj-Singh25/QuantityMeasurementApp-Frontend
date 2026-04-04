@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { QuantityInputDTO, QuantityMeasurementDTO } from '../models/quantity.model';
+import { environment } from '../../environments/environment'; // Adjust the path if needed
+
 
 @Injectable({ providedIn: 'root' })
-export class QuantityService {
-  private apiUrl = 'http://localhost:8080/api/v1/quantities';
+export class QuantityService { 
+  private apiUrl = `${environment.apiUrl}/api/v1/quantities`;
 
   constructor(private http: HttpClient) {}
 
