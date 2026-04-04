@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   constructor(private router: Router) {}
@@ -22,7 +22,12 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
+  // loginWithGoogle(): void {
+  //   window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+  // }
+  // ... inside your AuthService class
   loginWithGoogle(): void {
-    window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+    // Use the dynamic apiUrl from the environment file
+    window.location.href = `${environment.apiUrl}/oauth2/authorization/google`;
   }
 }
